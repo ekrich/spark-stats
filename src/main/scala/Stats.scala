@@ -2,9 +2,10 @@ package ekrich
 
 case class Stats(sum: Double, sumOfSquares: Double, len: Int) {
   lazy val average = sum / len
-  lazy val variance = sumOfSquares / len - average * average
+  lazy val averageSquared = average * average
+  lazy val variance = sumOfSquares / len - averageSquared
   lazy val stddev = Math.sqrt(variance)
-  lazy val sampleVariance = sumOfSquares / (len - 1) - average * average
+  lazy val sampleVariance = sumOfSquares / (len - 1) - averageSquared
   lazy val sampleStddev = Math.sqrt(sampleVariance)
   def print() = println(f"""Length: $len Ave: $average%.2f Variance: $variance%.2f Std Dev: $stddev%.2f 
     Sample Variance: $sampleVariance%.2f Sample Std Dev: $sampleStddev%.2f""")
