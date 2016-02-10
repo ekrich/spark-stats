@@ -4,4 +4,6 @@ To take advantage of Spark and distributed calculations when needed to take an e
 
 Thanks to Rob Rucker for the help rearranging the equation at Scala Days 2015.
 
-The equation we used: https://www.mathsisfun.com/data/images/standard-deviation-formula.gif
+The equation we used from https://www.mathsisfun.com/
+
+![Image of Equation](https://www.mathsisfun.com/data/images/standard-deviation-formula.gif)
