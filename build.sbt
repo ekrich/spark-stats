@@ -2,12 +2,16 @@ name := "Spark Stats"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
-val sparkVersion = "1.6.0"
+val sparkVersion = "2.1.0"
+
+scalacOptions ++= Seq(
+    "-feature"
+)
 
 libraryDependencies ++= Seq(
- "org.apache.spark" % "spark-core_2.11" % sparkVersion
+ "org.apache.spark" %% "spark-core" % sparkVersion
 )
 
 val gitHeadCommitSha = taskKey[String]("Determines the current git commit SHA: ")
