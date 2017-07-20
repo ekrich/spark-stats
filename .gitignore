@@ -1,4 +1,10 @@
-/.cache-main
+# gitignore
 /bin/
-/.worksheet/
 /target/
+
+# eclipse files
+.settings/
+.classpath
+.project
+.cache-main
+.worksheet/
