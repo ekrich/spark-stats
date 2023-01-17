@@ -8,3 +8,8 @@
 .project
 .cache-main
 .worksheet/
+
+# vscode
+/.vscode/
+/.bsp/
+metals.sbt
