@@ -4,10 +4,11 @@ version := "1.0"
 
 scalaVersion := "2.13.10"
 
-val sparkVersion = "3.3.1"
+val sparkVersion = "3.3.2"
 
 scalacOptions ++= Seq(
-  "-feature"
+  "-feature",
+  "-deprecation"
 )
 
 libraryDependencies ++= Seq(
@@ -15,4 +16,3 @@ libraryDependencies ++= Seq(
 )
 
 Compile / run / fork := true
-
