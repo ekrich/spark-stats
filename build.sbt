@@ -14,4 +14,5 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion
 )
 
-fork in run := true
+Compile / run / fork := true
+
