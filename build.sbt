@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
 Compile / run / fork := true
 
 javaOptions ++= Seq(
+  "-XX:+IgnoreUnrecognizedVMOptions",
   "--add-opens=java.base/java.nio=ALL-UNNAMED",
   "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
   "--add-opens=java.base/java.lang=ALL-UNNAMED",
