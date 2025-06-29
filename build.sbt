@@ -5,12 +5,14 @@ version := "1.0"
 val scalaVersion212 = "2.12.20"
 val scalaVersion213 = "2.13.16"
 
+scalaVersion := scalaVersion212
+
 val sparkVersion212 = "3.5.6"
 val sparkVersion213 = "4.0.0"
 
-scalaVersion := scalaVersion212
 val sparkVersion = sparkVersion212
-val scalaVersions = Seq(sparkVersion212, sparkVersion213)
+
+crossScalaVersions := Seq(scalaVersion212, scalaVersion213)
 
 scalacOptions ++= Seq(
   "-feature",
