@@ -4,24 +4,39 @@ version := "1.0"
 
 val scalaVersion212 = "2.12.20"
 val scalaVersion213 = "2.13.16"
+val scalaVersion3 = "3.3.6"
 
 scalaVersion := scalaVersion212
 
-val sparkVersion212 = "3.5.6"
-val sparkVersion213 = "4.0.0"
+val sparkVersion3 = "3.5.6"
+val sparkVersion4 = "4.0.0"
 
-val sparkVersion = sparkVersion212
+crossScalaVersions := Seq(scalaVersion212, scalaVersion213, scalaVersion3)
 
-crossScalaVersions := Seq(scalaVersion212, scalaVersion213)
+val isScala212 = Def.setting {
+  CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 12)) => true
+    case _             => false
+  }
+}
 
 scalacOptions ++= Seq(
   "-feature",
   "-deprecation"
 )
 
-libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion
-)
+libraryDependencies ++= {
+  if (isScala212.value)
+    Seq(
+      "org.apache.spark" %% "spark-core" % sparkVersion3
+    )
+  else
+    Seq(
+      ("org.apache.spark" %% "spark-core" % sparkVersion4).cross(
+        CrossVersion.for3Use2_13
+      )
+    )
+}
 
 Compile / run / fork := true
 
