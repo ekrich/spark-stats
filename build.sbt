@@ -2,9 +2,15 @@ name := "Spark Stats"
 
 version := "1.0"
 
-scalaVersion := "2.13.13"
+val scalaVersion212 = "2.12.20"
+val scalaVersion213 = "2.13.16"
 
-val sparkVersion = "3.5.1"
+val sparkVersion212 = "3.5.6"
+val sparkVersion213 = "4.0.0"
+
+scalaVersion := scalaVersion212
+val sparkVersion = sparkVersion212
+val scalaVersions = Seq(sparkVersion212, sparkVersion213)
 
 scalacOptions ++= Seq(
   "-feature",
